@@ -6,7 +6,7 @@ docker run -it -p 24224:24224 -v ./test.conf:/fluentd/etc/test.conf -e FLUENTD_C
 
 # t1 Build and Run this program called 'loop' [in another terminal#2]
 docker build -t loop:latest .
-docker run -it --log-driver=fluentd --log-opt fluentd-address=127.0.0.1:24224 loop:latest
+docker run -it --log-driver=fluentd --log-opt fluentd-address=127.0.0.1:24224 -p 8090:8090 loop:latest
 
 # t5 Now back to terminal#1 and stop the fluentd server
 

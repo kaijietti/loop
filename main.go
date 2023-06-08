@@ -39,7 +39,7 @@ func stdout(w http.ResponseWriter, req *http.Request) {
 
 func stderr(w http.ResponseWriter, req *http.Request) {
 	// t4. Calling /stderr API is OK.
-	// t9. Calling /stderr API is *still* OK after t4.
+	// t9. Calling /stderr API is *not* OK after t4.
 	_, _ = fmt.Fprintf(os.Stderr, "request writing stderr")
 	_, _ = fmt.Fprintf(w, "nonStop: %v\n", nonStop)
 	w.WriteHeader(http.StatusOK)
